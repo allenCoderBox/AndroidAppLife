@@ -8,7 +8,7 @@ import bg.coder.allen.com.bglib.core.BgActivityLifeCallBack;
  * Created by husongzhen on 17/11/29.
  */
 
-public class BgApp extends Application {
+public class BfApp extends Application {
 
     private BgActivityLifeCallBack activityLifeCallBack = new BgActivityLifeCallBack();
 

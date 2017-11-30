@@ -3,7 +3,7 @@ apply plugin: 'maven'
 
 //#包信息
 def ARTIFACTID = "bfLib"
-def LIBRARY_VERSION = "0.0.1"
+def LIBRARY_VERSION = "0.0.2"
 //#Mac下地址:file:///Users/<username>/my/local/repo
 def LOCAL_REPO_URL = "file:///Users/husongzhen/Documents/other/AppBackground/"
 def GROUP_ID = 'maven.com.allen.cool'
