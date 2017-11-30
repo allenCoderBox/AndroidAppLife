@@ -2,14 +2,14 @@ package bg.coder.allen.com.appbackground;
 
 import android.util.Log;
 
-import bg.coder.allen.com.bglib.BgApp;
+import bg.coder.allen.com.bglib.BfApp;
 import bg.coder.allen.com.bglib.OnAppRunStatusListener;
 
 /**
  * Created by husongzhen on 17/11/29.
  */
 
-public class App extends BgApp implements OnAppRunStatusListener {
+public class App extends BfApp implements OnAppRunStatusListener {
 
 
     @Override

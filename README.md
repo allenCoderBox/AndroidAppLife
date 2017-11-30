@@ -20,11 +20,76 @@
 
 
 ```groovy
-implementation "maven.com.allen.cool:bfLib:0.0.1"
+implementation "maven.com.allen.cool:bfLib:0.0.2"
 
 ```
 
-可以通过继承
+可以通过继承BfApp
+```java
+
+public class App extends BfApp implements OnAppRunStatusListener {
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        registerAppLifeListener(this);
+    }
+
+    @Override
+    public void onBackgroundListener() {
+
+
+        Log.e(getClass().getName(), "bg");
+
+
+    }
+
+    @Override
+    public void onForegroundListener() {
+        Log.e(getClass().getName(), "onForegroundListener");
+    }
+}
+
+
+
+
+```
+
+
+
+如果你已经继承了其他的Application
+
+```java
+
+public class NApp extends Application {
+    private BgActivityLifeCallBack activityLifeCallBack = new BgActivityLifeCallBack();
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            registerActivityLifecycleCallbacks(activityLifeCallBack);
+        }
+    }
+
+
+    public void registerAppLifeListener(OnAppRunStatusListener listener) {
+        activityLifeCallBack.register(listener);
+    }
+
+
+    public void unRegisterAppLifeListener(OnAppRunStatusListener listener) {
+        activityLifeCallBack.unRegister(listener);
+    }
+
+}
+
+
+
+
+```
 
 
 

@@ -29,5 +29,5 @@ dependencies {
 
 
 
-    implementation "maven.com.allen.cool:bfLib:0.0.1"
+    implementation "maven.com.allen.cool:bfLib:0.0.2"
 }

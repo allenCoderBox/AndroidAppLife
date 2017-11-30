@@ -1,6 +1,7 @@
 package bg.coder.allen.com.appbackground;
 
 import android.app.Application;
+import android.os.Build;
 
 import bg.coder.allen.com.bglib.OnAppRunStatusListener;
 import bg.coder.allen.com.bglib.core.BgActivityLifeCallBack;
@@ -15,7 +16,9 @@ public class NApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        registerActivityLifecycleCallbacks(activityLifeCallBack);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            registerActivityLifecycleCallbacks(activityLifeCallBack);
+        }
     }
 
 
